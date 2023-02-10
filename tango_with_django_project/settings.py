@@ -80,6 +80,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'tango_with_django_project.wsgi.application'
 
+PASSWORD_HASHERS = (
+    'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
+)
+
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
@@ -130,7 +135,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-
+LOGIN_URL = 'rango:login'
 #print(__file__)
 #print(os.path.dirname(__file__))
 #print(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
